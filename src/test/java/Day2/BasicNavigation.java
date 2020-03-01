@@ -23,7 +23,10 @@ public class BasicNavigation {
             System.out.println("test fail");
         }
 
+
+
         driver.close();
+
 
 
 
