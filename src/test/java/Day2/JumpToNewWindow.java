@@ -24,7 +24,12 @@ public class JumpToNewWindow {
         Set<String> windowHandles= driver.getWindowHandles();//set does not allow duplicates.
         System.out.println(windowHandles);
         //System.out.println(driver.getWindowHandles());
+
+
+
         System.out.println("before switch url:"+driver.getCurrentUrl());
+        Thread.sleep(5000);
+
 for (String windowId:windowHandles){
     if (!windowId.equals(windowHandle)){
         driver.switchTo().window(windowId);
