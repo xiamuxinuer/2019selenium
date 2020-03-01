@@ -9,7 +9,7 @@ public class QuitVSClose {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver=new ChromeDriver();
         driver.get("http://practice.cybertekschool.com/open_new_tab");
-        Thread.sleep(10000);   //for demo: wait3 seconds and close
+        Thread.sleep(8000);   //for demo: wait3 seconds and close
 
        // driver.close();   // only old window closed. new window still open.
 
