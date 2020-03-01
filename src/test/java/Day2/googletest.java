@@ -8,7 +8,7 @@ public class googletest {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver=new ChromeDriver();
         driver.get("http://google.com");
-        //Thread.sleep(3000);   //for demo: wait3 seconds and close
+        Thread.sleep(3000);   //for demo: wait3 seconds and close
 
 
         String title=driver.getTitle(); //returns title
