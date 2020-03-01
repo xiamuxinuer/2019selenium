@@ -14,7 +14,7 @@ public class Day1SeleniumClass {
         //create chrome driver object
         ChromeDriver driver=new ChromeDriver();
         //open some website
-        driver.get("http://google.com");
+        driver.get("http://google.com   ");
 
 
 
