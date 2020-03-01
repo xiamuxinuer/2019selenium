@@ -30,6 +30,11 @@ public class googletest {
         driver.navigate().back();
 
         Thread.sleep(3000);
+
+        System.out.println(driver.getTitle());
+        System.out.println(driver.getCurrentUrl());
+
+
 driver.close();
 
     }
