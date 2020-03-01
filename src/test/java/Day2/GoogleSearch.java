@@ -20,6 +20,14 @@ public class GoogleSearch {
 
        search.sendKeys("Java", Keys.ENTER);
 
+        Thread.sleep(3000);
+
+
+       WebElement news=driver.findElement(By.linkText("News"));
+
+       news.click();
+
+
 
         Thread.sleep(5000);
         driver.quit();
