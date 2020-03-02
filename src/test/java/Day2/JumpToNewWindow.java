@@ -28,6 +28,7 @@ public class JumpToNewWindow {
 
 
         System.out.println("before switch url:"+driver.getCurrentUrl());
+        System.out.println("current page is: "+driver.getTitle());
         Thread.sleep(5000);
 
 for (String each:windowHandles){
@@ -36,12 +37,12 @@ for (String each:windowHandles){
     }
 }
         System.out.println("after switch url:"+driver.getCurrentUrl());
-
+        System.out.println("current page is : "+driver.getTitle());
         Thread.sleep(8000);
 
 
 
-         driver.close();   // only old window closed. new window still open.
+         driver.close();   // close where you at
 
        // driver.quit();// close all the windows that opened by driver.
 
