@@ -43,7 +43,7 @@ for (String each:windowHandles){
 
 
 
-         driver.close();   // close where you at
+         driver.close();   // close where you at(we are at new window, so new window will be close).
 
        // driver.quit();// close all the windows that opened by driver.
 
