@@ -36,6 +36,7 @@ for (String each:windowHandles){
         driver.switchTo().window(each);
     }
 }
+
         System.out.println("after switch url:"+driver.getCurrentUrl());
         System.out.println("current page is : "+driver.getTitle());
         Thread.sleep(8000);
