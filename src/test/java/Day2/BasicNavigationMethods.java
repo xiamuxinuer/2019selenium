@@ -55,8 +55,8 @@ public class BasicNavigationMethods {
 
         Thread.sleep(3000);
 
-        System.out.println(driver.getTitle());// page title is : google
-        System.out.println(driver.getCurrentUrl());// google url : https://www.google.com/?gws_rd=ssl
+        System.out.println("current page : "+ driver.getTitle());// page title is : google
+        System.out.println("current page url: "+driver.getCurrentUrl());// google url : https://www.google.com/?gws_rd=ssl
 
 
 driver.close();
