@@ -14,7 +14,7 @@ public class JumpToNewWindow {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver=new ChromeDriver();
         driver.get("http://practice.cybertekschool.com/open_new_tab");
-        Thread.sleep(8000);   //for demo: wait3 seconds and close
+        Thread.sleep(8000);   //for demo: wait 8 seconds and close
 
 
         String windowHandle=driver.getWindowHandle();
@@ -30,9 +30,9 @@ public class JumpToNewWindow {
         System.out.println("before switch url:"+driver.getCurrentUrl());
         Thread.sleep(5000);
 
-for (String windowId:windowHandles){
-    if (!windowId.equals(windowHandle)){
-        driver.switchTo().window(windowId);
+for (String each:windowHandles){
+    if (!each.equals(windowHandle)){
+        driver.switchTo().window(each);
     }
 }
         System.out.println("after switch url:"+driver.getCurrentUrl());
@@ -41,10 +41,14 @@ for (String windowId:windowHandles){
 
 
 
-         //driver.close();   // only old window closed. new window still open.
+         driver.close();   // only old window closed. new window still open.
 
-        driver.quit();// close all the windows that opened by driver.
+       // driver.quit();// close all the windows that opened by driver.
 
+
+//
+//        String pageTitle=driver.getTitle();
+//        switchToWindowBasedOnTitle(pageTitle,driver);
 
 
     }
@@ -59,8 +63,8 @@ for (String windowId:windowHandles){
      */
     public static void switchToWindowBasedOnTitle(String pageTitle, WebDriver driver){
         Set<String> windows = driver.getWindowHandles();
-        for (String window: windows){
-            driver.switchTo().window(window);
+        for (String eachWindow: windows){
+            driver.switchTo().window(eachWindow);
             if (driver.getTitle().equals(pageTitle)){
                 break;
             }
