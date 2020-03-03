@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class GoogleSearch {
+public class WebElement {
     public static void main(String[] args) throws InterruptedException {
 
 
@@ -16,14 +16,14 @@ public class GoogleSearch {
 
         Thread.sleep(5000);
 
-        WebElement search=driver.findElement(By.name("q"));
+        org.openqa.selenium.WebElement search=driver.findElement(By.name("q"));
 
        search.sendKeys("Java", Keys.ENTER);
 
         Thread.sleep(3000);
 
 
-       WebElement news=driver.findElement(By.linkText("News"));
+       org.openqa.selenium.WebElement news=driver.findElement(By.linkText("News"));
 
        news.click();
 
