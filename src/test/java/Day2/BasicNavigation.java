@@ -8,6 +8,7 @@ public class BasicNavigation {
 
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver=new ChromeDriver();
+        driver.manage().window().fullscreen();
         driver.get("http://google.com");
         //Thread.sleep(3000);   //for demo: wait3 seconds and close
 
