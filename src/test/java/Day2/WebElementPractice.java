@@ -1,20 +1,36 @@
 package Day2;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebElementPractice {
-
     public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
-        ChromeDriver driver=new ChromeDriver();
-        driver.get("http://practice.cybertekschool.com/open_new_tab");
-        Thread.sleep(8000);   //for demo: wait3 seconds and close
+        WebDriver driver=new ChromeDriver();
+        driver.get("http://google.com");
+        Thread.sleep(5000);
+        WebElement element=driver.findElement(By.name("q"));
+        element.sendKeys("gmail", Keys.ENTER);
+        Thread.sleep(5000);
+        WebElement element1=driver.findElement(By.tagName("h3"));//Gmail - Google
+        element1.click();
+        Thread.sleep(5000);
 
-        driver.close();   // only old window closed. new window still open.
 
-driver.quit();// close all the windows that opened by driver.
+
+     //   WebElement element2=driver.findElement(By.tagName("a"));
+     //   element2.click();
+
+
+       // driver.get("http://gmail.com");
+        Thread.sleep(5000);
+
+
 
 
 
