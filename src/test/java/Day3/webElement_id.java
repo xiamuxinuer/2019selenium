@@ -15,13 +15,23 @@ public class webElement_id {
         Thread.sleep(5000);
         driver.findElement(By.id("wooden_spoon")).click();
         Thread.sleep(5000);
+String expected="Welcome to the Secure Area. When you are done click logout below.";
+String actual=driver.findElement(By.tagName("h4")).getText();
+        if (actual.equalsIgnoreCase(expected)) {
+            System.out.println("test passed");
+        }else {
+            System.out.println("test failed");
+        }
+
+        Thread.sleep(5000);
+
+        driver.findElement(By.linkText("Logout")).click();
+
+        Thread.sleep(3000);
+
+
 
         driver.quit();
-
-
-
-
-
 
     }
 
