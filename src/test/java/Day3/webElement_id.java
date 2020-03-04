@@ -25,8 +25,8 @@ String actual=driver.findElement(By.tagName("h4")).getText();
 
         Thread.sleep(5000);
 
-        driver.findElement(By.linkText("Logout")).click();
-
+        //driver.findElement(By.linkText("Logout")).click();
+        driver.findElement(By.partialLinkText("Logout")).click();
         Thread.sleep(3000);
 
 
