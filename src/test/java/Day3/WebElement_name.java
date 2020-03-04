@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import utilities.DriverFactory;
 
-public class WebElementPractice {
+public class WebElement_name {
     public static void main(String[] args) throws InterruptedException {
 
 //WebDriverManager.chromedriver().setup();
@@ -21,24 +21,25 @@ public class WebElementPractice {
 
 driver.get("http://practice.cybertekschool.com/sign_up");
 
-WebElement  element=driver.findElement(By.name("full_name"));
+WebElement  fullName=driver.findElement(By.name("full_name"));
 
-element.sendKeys("akbar", Keys.ENTER);
+fullName.sendKeys("Mister Twister");
+
 Thread.sleep(5000);
 
 
         WebElement  element1=driver.findElement(By.name("email"));
 
-        element.sendKeys("123", Keys.ENTER);
-        Thread.sleep(5000);
+      element1.sendKeys("123@gmail.com");
+       Thread.sleep(5000);
 
 
         WebElement  element2=driver.findElement(By.name("wooden_spoon"));
 
-       element2.click();
-
+      element2.click();
+//
+//
         Thread.sleep(5000);
-
 driver.quit();
 
 
