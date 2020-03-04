@@ -2,6 +2,7 @@ package Day3;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import utilities.DriverFactory;
 
 public class webElement_id {
@@ -28,6 +29,21 @@ String actual=driver.findElement(By.tagName("h4")).getText();
         driver.findElement(By.linkText("Logout")).click();
        // driver.findElement(By.partialLinkText("Logout")).click();
         Thread.sleep(3000);
+
+        driver.findElement(By.name("username")).sendKeys("emma");
+        Thread.sleep(2000);
+
+        driver.findElement(By.name("password")).sendKeys("1236");
+        Thread.sleep(2000);
+
+        driver.findElement(By.id("wooden_spoon")).click();
+        Thread.sleep(2000);
+
+        WebElement errorMessage=driver.findElement(By.id("flash-messages"));
+        System.out.println(errorMessage.getText());
+
+
+
 
 
 
