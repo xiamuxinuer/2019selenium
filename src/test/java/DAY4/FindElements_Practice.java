@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class FindElements_Practice {
     public static void main(String[] args) throws InterruptedException {
 
@@ -16,9 +18,25 @@ public class FindElements_Practice {
      driver.findElement(By.id("disappearing_button")).click();
      Thread.sleep(2000);
 
+     if (driver.findElements(By.id("disappearing_button")).size()==0){
+         System.out.println("test passed,elements does not exist.");
+     }
+     else {
+         System.out.println("test failed");
+     }
 
+     Thread.sleep(2000);
 
+        List<WebElement> buttons=driver.findElements(By.tagName("button"));
 
+        for (int i = 0; i <buttons.size() ; i++) {
+
+            // driver.findElements(By.tagName("button")).get(i).click();
+            buttons.get(i).click();
+
+            Thread.sleep(2000);
+
+        }
 
 
 driver.quit();
