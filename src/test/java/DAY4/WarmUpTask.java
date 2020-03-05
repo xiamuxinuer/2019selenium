@@ -15,9 +15,9 @@ public class WarmUpTask {
 
 //call the methods:
 
-       ebayTask(driver);
+      // ebayTask(driver);
 
-        amazonTask(driver);
+      //  amazonTask(driver);
 
 
         wikipediaTask(driver);
@@ -31,7 +31,7 @@ public class WarmUpTask {
     public static void  ebayTask(WebDriver driver){
 
         driver.get("http://ebay.com");
-        driver.findElement(By.name("_nkw")).sendKeys("java book",Keys.ENTER);
+        driver.findElement(By.name("_nkw")).sendKeys("java book",Keys.RETURN);
         System.out.println(driver.findElement(By.tagName("h1")).getText());
 
         driver.quit();
