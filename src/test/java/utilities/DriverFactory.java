@@ -12,7 +12,7 @@ public class DriverFactory {
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
         }else {
-            WebDriverManager.firefoxdriver().setup();
+            WebDriverManager.firefoxdriver().version("79.0").setup();
             return new FirefoxDriver();
         }
     }
