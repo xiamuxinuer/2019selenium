@@ -43,6 +43,12 @@ public class FindElements_Practice {
 
         }
 
+        driver.navigate().refresh();
+
+
+
+
+
 
 driver.quit();
 
