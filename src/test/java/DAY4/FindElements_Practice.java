@@ -18,6 +18,7 @@ public class FindElements_Practice {
      driver.findElement(By.id("disappearing_button")).click();
      Thread.sleep(2000);
 
+
      if (driver.findElements(By.id("disappearing_button")).size()==0){
          System.out.println("test passed,elements does not exist.");
      }
@@ -26,6 +27,10 @@ public class FindElements_Practice {
      }
 
      Thread.sleep(2000);
+     driver.navigate().refresh();//("disappear button appear again)
+
+
+    // to click each button one bu one:
 
         List<WebElement> buttons=driver.findElements(By.tagName("button"));
 
