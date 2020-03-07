@@ -15,17 +15,17 @@ public class FileUplaoding {
         driver.get("http://practice.cybertekschool.com/upload");
         Browserutils.wait(3);
         WebElement upLoad=driver.findElement(By.id("file-upload"));
+       //upLoad.click();
 
 
-        String filePath=System.getProperty("D:\\Cybertek 2019\\Test Automation--selenium\\HTML.html");
-        System.out.println(filePath);
 
-        upLoad.sendKeys(filePath);
+
+        upLoad.sendKeys("file path here ");
 
         Browserutils.wait(3);
 
 
-        //driver.findElement(By.id("file-submit")).click();
+        driver.findElement(By.id("file-submit")).click();
 
 
 
