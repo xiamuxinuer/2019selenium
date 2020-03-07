@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import utilities.BrowserUnits;
+import utilities.Browserutils;
 
 import java.util.List;
 
@@ -17,10 +17,10 @@ public class RadioButton {
 
         driver.get("http://practice.cybertekschool.com/radio_buttons");
         driver.manage().window().maximize();
-        BrowserUnits.wait(2);
+        Browserutils.wait(2);
         driver.findElement(By.id("red")).click();
 
-        BrowserUnits.wait(2);
+        Browserutils.wait(2);
 
 // find all  radio buttons :
        List<WebElement> allButtons= driver.findElements(By.tagName("input"));
@@ -35,7 +35,7 @@ public class RadioButton {
             if (eachButton.isEnabled()){
                 eachButton.click();
                 System.out.println("clicked on "+eachButton.getAttribute("id"));
-                BrowserUnits.wait(1);
+                Browserutils.wait(1);
             }else {
                 System.out.println(eachButton.getAttribute("id")+" button is disabled ") ;
             }

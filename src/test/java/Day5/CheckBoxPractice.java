@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import utilities.BrowserUnits;
+import utilities.Browserutils;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class CheckBoxPractice {
         WebDriver driver= new ChromeDriver();
 
         driver.get("http://practice.cybertekschool.com/checkboxes");
-        BrowserUnits.wait(2);
+        Browserutils.wait(2);
         //verify check box1 is not selected, check box 2 is has already selected:
 
         List<WebElement> checkBoxes=driver.findElements(By.tagName("input"));
@@ -28,7 +28,7 @@ public class CheckBoxPractice {
         }
 
 
-        BrowserUnits.wait(2);
+        Browserutils.wait(2);
 
         if (!checkBoxes.get(0).isSelected()&&checkBoxes.get(1).isSelected()){
             System.out.println("test passed");

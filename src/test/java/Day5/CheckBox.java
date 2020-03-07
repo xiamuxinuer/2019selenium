@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import utilities.BrowserUnits;
+import utilities.Browserutils;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class CheckBox {
         WebDriver driver= new ChromeDriver();
 
         driver.get("http://practice.cybertekschool.com/checkboxes");
-        BrowserUnits.wait(2);
+        Browserutils.wait(2);
 
         List<WebElement> checkBoxes=driver.findElements(By.tagName("input"));
 //        checkBoxes.get(0).click();
@@ -29,7 +29,7 @@ public class CheckBox {
             }else {
                 System.out.println("already selected");
             }
-            BrowserUnits.wait(2);
+            Browserutils.wait(2);
         }
 
 //        checkBoxes.get(1).click();

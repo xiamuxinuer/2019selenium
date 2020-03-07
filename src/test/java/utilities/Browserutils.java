@@ -1,6 +1,6 @@
 package utilities;
 
-public class BrowserUnits {
+public class Browserutils {
 
     // thread.sleep method:
    public static void wait(int second){
