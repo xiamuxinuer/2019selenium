@@ -23,10 +23,11 @@ public class NoSelectDropDown {
         Browserutils.wait(2);
         driver.navigate().back();
         Browserutils.wait(2);
+
         driver.findElement(By.id("dropdownMenuLink")).click();
         Browserutils.wait(2);
+        System.out.println(driver.findElement(By.linkText("Google")).getAttribute("href"));
         driver.findElement(By.linkText("Google")).click();
-
 
 
         Browserutils.wait(2);
