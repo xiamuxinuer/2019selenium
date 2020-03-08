@@ -56,6 +56,34 @@ public class DropDowns {
         }
 
 
+        Browserutils.wait(2);
+
+     Select stateSelect=new Select(driver.findElement(By.id("state")));
+
+        stateSelect.selectByVisibleText("District Of Columbia");
+        Browserutils.wait(1);
+        System.out.println("select District Of Columbia");
+       String selected=stateSelect.getFirstSelectedOption().getText();
+        System.out.println(selected);
+        if (selected.equalsIgnoreCase("District Of Columbia")){
+            System.out.println("test pass");
+        }else {
+            System.out.println("test failed");
+        }
+
+
+
+        List<WebElement> allStates=stateSelect.getOptions();
+        for (WebElement eachState:allStates) {
+            stateSelect.selectByVisibleText(eachState.getText());
+            System.out.println(eachState.getText());
+        }
+
+
+
+
+
+
 
 
 
@@ -73,3 +101,4 @@ driver.quit();
 
     }
 }
+
