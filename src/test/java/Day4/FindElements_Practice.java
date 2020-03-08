@@ -1,4 +1,4 @@
-package DAY4;
+package Day4;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
