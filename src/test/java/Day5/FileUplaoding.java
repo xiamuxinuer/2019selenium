@@ -2,6 +2,7 @@ package Day5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,11 +17,12 @@ public class FileUplaoding {
         Browserutils.wait(3);
         WebElement upLoad=driver.findElement(By.id("file-upload"));
        //upLoad.click();
+        String filePath="C:\\Users\\akbar\\Desktop\\Alex Anzhaer cover letter.docx";
+        System.out.println(filePath);
 
+//              my file path:      "C:\Users\akbar\Desktop\Alex Anzhaer cover letter.docx"
 
-
-
-        upLoad.sendKeys("file path here ");
+        upLoad.sendKeys(" C:\\Users\\akbar\\Desktop\\Alex Anzhaer cover letter.docx");
 
         Browserutils.wait(3);
 
@@ -30,7 +32,7 @@ public class FileUplaoding {
 
 
 
-
+        Browserutils.wait(3);
 
 
 
