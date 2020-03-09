@@ -44,6 +44,7 @@ public class Alert {
         Browserutils.wait(3);
       alert.accept();
 
+
         String actual=driver.findElement(By.id("result")).getText();
 
         if (actual.endsWith("hello world")){
