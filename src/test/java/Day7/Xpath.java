@@ -14,8 +14,10 @@ public class Xpath {
 
         driver.get("http://practice.cybertekschool.com/login");
         Browserutils.wait(2);
+        //driver.findElement(By.xpath(userNameLocator)).sendKeys("emma");
         driver.findElement(By.xpath("//*[text()='Username']/following-sibling::input")).sendKeys("Emma");
         Browserutils.wait(2);
+        //driver.findElement(By.xpath(passwordLocator)).sendKeys("123");
         driver.findElement(By.xpath("//*[text()='Password']/following-sibling::input")).sendKeys("123");
 
         Browserutils.wait(2);
@@ -28,4 +30,8 @@ public class Xpath {
 
 
     }
+
+    static String userNameLocator = "//label[text()='Username']/following-sibling::input";
+    static String passwordLocator = "//label[text()='Password']/following-sibling::input";
+
 }
