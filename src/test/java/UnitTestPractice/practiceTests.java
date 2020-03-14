@@ -10,6 +10,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class practiceTests {
      public ChromeDriver driver;
 
@@ -58,6 +60,29 @@ public class practiceTests {
         String expected="Your e-mail's been sent!";
         Assert.assertEquals(actual,expected,"message is not match");
 }
+
+@Test
+    public void checkBoxTest() throws InterruptedException {
+
+driver.findElement(By.linkText("Checkboxes")).click();
+    Thread.sleep(1000);
+    List<WebElement> checkBoxes=driver.findElements(By.tagName("input"));
+    Thread.sleep(2000);
+
+    //if we dont want to use List here , find first check box  use xpath:
+    //WebElement firstCheckBox=driver.findElement(By.xpath("//input[1]"));
+
+
+
+        checkBoxes.get(0).click();
+    Thread.sleep(2000);
+        Assert.assertTrue(checkBoxes.get(0).isSelected(),"check box #1 is not selected");
+
+}
+
+
+
+
 
 
 
