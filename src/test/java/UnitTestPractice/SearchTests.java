@@ -18,7 +18,7 @@ public class  SearchTests  {
 
     private WebDriver driver;
 
-    @Test
+    @Test(description = "search java key word on google")
     public void googleSearchTest() throws InterruptedException {
         driver.get("http://google.com");
         driver.findElement(By.name("q")).sendKeys("java", Keys.ENTER);
@@ -37,6 +37,22 @@ public class  SearchTests  {
         }
     }
 
+    @Test(description = "search for java book on amazon")
+    public void amazonSearchTest() throws InterruptedException {
+        driver.get("http://amazon.com");
+        driver.manage().window().maximize();
+        Thread.sleep(3000);
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Java",Keys.ENTER);
+        Thread.sleep(3000);
+       List<WebElement> searchItems= driver.findElements(By.tagName("h2"));
+        Thread.sleep(3000);
+        searchItems.get(0).click();
+        Thread.sleep(3000);
+
+        WebElement productTitle= driver.findElement(By.id("title"));
+        String productTitleString=productTitle.getText();
+        Assert.assertTrue(productTitleString.contains("Java"));
+    }
 
     @BeforeMethod
     public void setup(){
