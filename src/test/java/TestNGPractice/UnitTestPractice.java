@@ -1,4 +1,4 @@
-package UnitTestPractice;
+package TestNGPractice;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
