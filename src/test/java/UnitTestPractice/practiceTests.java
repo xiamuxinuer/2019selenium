@@ -71,9 +71,6 @@ driver.findElement(By.linkText("Checkboxes")).click();
 
     //if we dont want to use List here , find first check box  use xpath:
     //WebElement firstCheckBox=driver.findElement(By.xpath("//input[1]"));
-
-
-
         checkBoxes.get(0).click();
     Thread.sleep(2000);
         Assert.assertTrue(checkBoxes.get(0).isSelected(),"check box #1 is not selected");
