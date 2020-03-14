@@ -57,11 +57,6 @@ public class practiceTests {
         String actual=driver.findElement(By.tagName("h4")).getText();
         String expected="Your e-mail's been sent!";
         Assert.assertEquals(actual,expected,"message is not match");
-
-
-
-
-
 }
 
 
