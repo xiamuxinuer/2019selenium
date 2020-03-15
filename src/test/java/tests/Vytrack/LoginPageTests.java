@@ -1,4 +1,4 @@
-package tests.Vytrack.login;
+package tests.Vytrack;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -67,10 +67,6 @@ public void invalidUserName() throws InterruptedException {
         String actual=driver.getTitle();
         String expected="Dashboard";
         Assert.assertEquals(actual,expected,"page title is not correct");
-
-
-
-
     }
 
 
