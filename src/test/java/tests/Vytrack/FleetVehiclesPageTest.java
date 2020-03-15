@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -58,6 +59,20 @@ public class FleetVehiclesPageTest {
        System.out.println(actual);
        String expected="All Cars";
        Assert.assertEquals(actual,expected," sub title does not match");
+
+       String actualNumber= driver.findElement(By.cssSelector("input[type='number']")).getAttribute("value");
+       System.out.println(actualNumber);
+       Thread.sleep(5000);
+       String expectedNum="1";
+       Assert.assertEquals(actualNumber,expectedNum,"they are not the same");
+
+
+
+
+
+
+
+
 
    }
 
