@@ -14,8 +14,8 @@ import org.testng.annotations.Test;
 
 public class FleetVehiclesPageTest {
     private WebDriver driver;
-    private  String  url="https://qa2.vytrack.com/user/login";
-    private By userNameBy=By.id("prependedInput");
+    private String  url="https://qa2.vytrack.com/user/login";
+    private By  userNameBy=By.id("prependedInput");
     private By  passwordBy=By.id("prependedInput2");
     private By  warningBy=By.xpath("//div[text()='Invalid user name or password.']");
     private String userName="storemanager85";
@@ -65,15 +65,6 @@ public class FleetVehiclesPageTest {
        Thread.sleep(5000);
        String expectedNum="1";
        Assert.assertEquals(actualNumber,expectedNum,"they are not the same");
-
-
-
-
-
-
-
-
-
    }
 
 
