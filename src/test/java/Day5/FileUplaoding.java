@@ -16,13 +16,10 @@ public class FileUplaoding {
         driver.get("http://practice.cybertekschool.com/upload");
         Browserutils.wait(3);
         WebElement upLoad=driver.findElement(By.id("file-upload"));
-       //upLoad.click();
+
         String filePath="C:\\Users\\akbar\\Desktop\\Alex Anzhaer cover letter.docx";
-        System.out.println(filePath);
 
-//              my file path:      "C:\Users\akbar\Desktop\Alex Anzhaer cover letter.docx"
-
-        upLoad.sendKeys(" C:\\Users\\akbar\\Desktop\\Alex Anzhaer cover letter.docx");
+        upLoad.sendKeys(filePath);
 
         Browserutils.wait(3);
 
