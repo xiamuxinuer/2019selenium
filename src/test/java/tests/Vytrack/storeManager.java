@@ -37,6 +37,8 @@ public class  storeManager{
      driver.findElement(userNameBy).sendKeys(userName);
      driver.findElement(passwordBy).sendKeys(password, Keys.ENTER);
      Thread.sleep(5000);
+        actions.moveToElement(driver.findElement(activitiesBy)).perform();
+        Thread.sleep(5000);
  }
 
     @AfterMethod
@@ -49,9 +51,6 @@ public class  storeManager{
 
     @Test
     public void callsPageTest() throws InterruptedException {
-
-        actions.moveToElement(driver.findElement(activitiesBy)).perform();
-        Thread.sleep(5000);
         driver.findElement(By.linkText("Calls")).click();
         Thread.sleep(5000);
         WebElement logCalls= driver.findElement(By.cssSelector("a[title='Log call']"));
@@ -59,10 +58,14 @@ public class  storeManager{
 
     }
 
+    @Test
+    public void calendarPageTest() throws InterruptedException {
+        driver.findElement(By.linkText("Calendar Events")).click();
+        Thread.sleep(5000);
+        WebElement calendar = driver.findElement(By.cssSelector("a[title='Create Calendar event']"));
+        Assert.assertTrue(calendar.isDisplayed());
 
 
-
-
-
+    }
 
 }
