@@ -68,6 +68,24 @@ public class ActionsTest {
 
     }
 
+    @Test
+    public void dragAndDrop() throws InterruptedException {
+        actions=new Actions(driver);
+        driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+        Thread.sleep(3000);
+        WebElement earth =driver.findElement(By.id("droptarget"));
+        WebElement moon = driver.findElement(By.id("draggable"));
+        actions.dragAndDrop(moon,earth).perform();
+     //or:
+        //actions.clickAndHold(moon).moveToElement(earth).release().perform();
+
+        String expected="You did great!";
+        String actual=earth.getText();
+        Assert.assertEquals(actual,expected);
+
+
+
+    }
 
 
 
