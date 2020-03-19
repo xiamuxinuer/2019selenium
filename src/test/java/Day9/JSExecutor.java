@@ -40,5 +40,27 @@ public class JSExecutor  {
       Thread.sleep(3000);
   }
 
+  @Test
+    public void scrollToEnd() throws InterruptedException {
+      driver.get("http://practice.cybertekschool.com");
+      Thread.sleep(3000);
+
+      WebElement link= driver.findElement(By.linkText("Cybertek School"));
+      driver.executeScript("arguments[0].scrollIntoView(true)",link);
+
+      Thread.sleep(3000);
+
+
+  }
+
+
+
+
+
+
+
+
+
+
 
 }
