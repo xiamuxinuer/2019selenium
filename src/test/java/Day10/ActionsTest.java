@@ -63,16 +63,14 @@ public class ActionsTest {
         WebElement enabled=driver.findElement(By.id("ui-id-3"));
         WebElement download=driver.findElement(By.id("ui-id-4"));
         actions.moveToElement(enabled).pause(2000).moveToElement(download).pause(2000).perform();
-        driver.findElement(By.id("ui-id-5")).click();
+        driver.findElement(By.id("ui-id-5")).click();   //pdf element
         Thread.sleep(2000);
 
-
-
-
-
-
-
     }
+
+
+
+
 
 
 
