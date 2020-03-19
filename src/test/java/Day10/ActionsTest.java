@@ -38,12 +38,12 @@ public class ActionsTest {
          actions=new Actions(driver);
 
         actions.moveToElement(img1).pause(1000).moveToElement(img2).build().perform();
-        String user2=  driver.findElement(By.xpath("(//h5)[2]")).getText();
+        String user2=  driver.findElement(By.xpath("(//h5)[2]")).getText();//--->>>//h5[text()='name: user2']
         System.out.println(user2);
         Thread.sleep(3000);
         actions.moveToElement(img1).pause(1000).build().perform();
         Thread.sleep(3000);
-        WebElement user1 =driver.findElement(By.xpath("(//h5)[1]"));
+        WebElement user1 =driver.findElement(By.xpath("(//h5)[1]"));//-->>>   //h5[text()='name: user1']
         Assert.assertTrue(user1.isDisplayed());
         driver.findElement(By.linkText("View profile")).click();
         Thread.sleep(3000);
@@ -52,6 +52,27 @@ public class ActionsTest {
     }
 
 
+    @Test
+    public void hoverAction() throws InterruptedException {
+       driver.get("http://practice.cybertekschool.com");
+        Thread.sleep(3000);
+        driver.findElement(By.linkText("JQuery UI Menus")).click();
+        Thread.sleep(3000);
+
+        actions=new Actions(driver);
+        WebElement enabled=driver.findElement(By.id("ui-id-3"));
+        WebElement download=driver.findElement(By.id("ui-id-4"));
+        actions.moveToElement(enabled).pause(2000).moveToElement(download).pause(2000).perform();
+        driver.findElement(By.id("ui-id-5")).click();
+        Thread.sleep(2000);
+
+
+
+
+
+
+
+    }
 
 
 
