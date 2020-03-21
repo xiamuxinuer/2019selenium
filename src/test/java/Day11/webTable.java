@@ -113,14 +113,4 @@ public class webTable {
         Assert.assertEquals(actual,expected);
 }
 
-
-
-
-
-
-
-
-
-
-
 }
