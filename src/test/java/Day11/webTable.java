@@ -93,14 +93,24 @@ public class webTable {
     for (int i=0; i< allColumnNames.size();i++){
         if (allColumnNames.get(i).getText().equals(columnName)){
             index=i+1;
+            break;
         }
     }
-
     Assert.assertEquals(index,3);
+    }
 
 
+    @Test
+    public void getSpecificCell(){
+    int row=3;
+    int column=5;
+    String xpath="//table[1]//tbody//tr[" + row + "]//td[" + column + "]";
 
-
+    WebElement cell= driver.findElement(By.xpath(xpath));
+        //System.out.println(cell.getText());
+        String actual=cell.getText();
+        String expected="http://www.jdoe.com";
+        Assert.assertEquals(actual,expected);
 
 
 }
