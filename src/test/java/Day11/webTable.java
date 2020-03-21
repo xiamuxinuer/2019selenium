@@ -83,7 +83,27 @@ public class webTable {
     Assert.assertTrue(elements.size()==0);
 }
 
+@Test
+    public void getColumnIndexByName(){
 
+    String columnName="Email";
+
+    List<WebElement> allColumnNames= driver.findElements(By.xpath("//table[2]//th"));
+    int index=0;
+    for (int i=0; i< allColumnNames.size();i++){
+        if (allColumnNames.get(i).getText().equals(columnName)){
+            index=i+1;
+        }
+    }
+
+    Assert.assertEquals(index,3);
+
+
+
+
+
+
+}
 
 
 
