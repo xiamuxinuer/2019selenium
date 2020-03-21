@@ -8,7 +8,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.DriverFactory;
-import utilities.webElements;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +33,7 @@ public class webTable {
     public void getColumnNames(){
         List<WebElement> columnNames=driver.findElements(By.xpath("//*[@id=\"table1\"]//thead//tr//th"));//or://table[1]//th
         List<String> expected = Arrays.asList("Last Name", "First Name", "Email", "Due", "Web Site", "Action");
-        Assert.assertEquals(expected, webElements.getTextFromWebElements(columnNames));
+        Assert.assertEquals(expected, utilities.webTable.getTextFromWebElements(columnNames));
 
         for (WebElement eachColumnName:columnNames){
             System.out.println(eachColumnName.getText());
