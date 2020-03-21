@@ -12,7 +12,7 @@ import utilities.DriverFactory;
 import java.util.Arrays;
 import java.util.List;
 
-public class webTable {
+public class webTablePractice {
     WebDriver driver;
 
     @BeforeMethod
