@@ -111,9 +111,9 @@ public class webTable {
         String actual=cell.getText();
         String expected="http://www.jdoe.com";
         Assert.assertEquals(actual,expected);
-
-
 }
+
+
 
 
 
