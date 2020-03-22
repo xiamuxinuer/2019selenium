@@ -43,13 +43,4 @@ String str="";
             Assert.assertTrue(firstName.compareTo(secondName)<=0);
         }
     }
-
-
-
-
-
-
-
-
-
 }
