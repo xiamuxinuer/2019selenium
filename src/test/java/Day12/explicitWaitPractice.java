@@ -34,6 +34,8 @@ public class explicitWaitPractice {
         WebDriverWait wait= new WebDriverWait(driver,10);
         //wait up to 10 seconds until title is google:
         wait.until(ExpectedConditions.titleIs("Google"));
+        driver.navigate().to("http://amazon.com");
+        wait.until(ExpectedConditions.titleContains("Amazon"));
 
     }
 
