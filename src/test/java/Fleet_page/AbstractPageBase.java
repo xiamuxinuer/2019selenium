@@ -1,4 +1,4 @@
-package pageObjectModel.loginPage;
+package Fleet_page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,6 +23,7 @@ public abstract class AbstractPageBase {
         Actions actions=new Actions(driver);
         Thread.sleep(3000);
         actions.moveToElement(tabElement).pause(2000).click(moduleElement).build().perform();
+        Thread.sleep(3000);
     }
 
 

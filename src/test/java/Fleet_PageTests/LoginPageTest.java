@@ -1,14 +1,8 @@
-package pageObjectModel.loginPage;
+package Fleet_PageTests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import Fleet_page.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import tests.Vytrack.TestBaseClass;
-import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class LoginPageTest extends TestBaseClass {
