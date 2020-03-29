@@ -24,6 +24,13 @@ public class Activities_CalendarEventsTest extends TestBaseClass {
         Assert.assertEquals(calendarEvent.getCurrentUserName(),calendarEvent.getDefaultOwnerName());
 
         Assert.assertEquals(calendarEvent.getStartDate(), DateTimeUtilities.getTodaysDate("MMM dd, yyyy"));
+
+        String startTime=calendarEvent.getStartTime();
+        String  endTime=calendarEvent.getEndTime();
+        String format="h:mm a";
+
+
+        Assert.assertEquals(DateTimeUtilities.getTimeDifference(startTime,endTime,format),1);
     }
 
 

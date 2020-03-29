@@ -20,8 +20,14 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
     @FindBy(css = "[id^='date_selector_oro_calendar_event_form_start']")
     private WebElement startDate;
 
+    @FindBy(css = "[id^='time_selector_oro_calendar_event_form_start']")
+    private  WebElement startTime;
+
+    @FindBy(css = "[id^='time_selector_oro_calendar_event_form_end']")
+    private  WebElement endTime;
+
     public void createCalenderEvent(){
-        //Browserutils.waitForPageToLoad(10);
+        Browserutils.waitForPageToLoad(10);
         wait.until(ExpectedConditions.elementToBeClickable(createCalendarEventButton)).click();
         //Browserutils.waitForPageToLoad(10);
     }
@@ -42,4 +48,19 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
         wait.until(ExpectedConditions.visibilityOf(startDate));
         return startDate.getAttribute("value");
     }
+
+
+    public String getStartTime(){
+        Browserutils.waitForPageToLoad(15);
+        wait.until(ExpectedConditions.visibilityOf(startTime));
+        return startTime.getAttribute("value");
+    }
+
+    public String getEndTime() {
+        Browserutils.waitForPageToLoad(10);
+        wait.until(ExpectedConditions.visibilityOf(endTime));
+        return endTime.getAttribute("value");
+
+    }
+
 }
