@@ -29,7 +29,6 @@ public class Activities_CalendarEventsTest extends TestBaseClass {
         String  endTime=calendarEvent.getEndTime();
         String format="h:mm a";
 
-
         Assert.assertEquals(DateTimeUtilities.getTimeDifference(startTime,endTime,format),1);
     }
 
