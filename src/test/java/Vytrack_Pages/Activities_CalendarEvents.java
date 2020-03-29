@@ -42,27 +42,4 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
         wait.until(ExpectedConditions.visibilityOf(startDate));
         return startDate.getAttribute("value");
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
