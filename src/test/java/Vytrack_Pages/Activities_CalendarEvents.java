@@ -26,12 +26,12 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
     }
 
     public String getCurrentUserName(){
-        wait.until(ExpectedConditions.elementToBeClickable(currentUser));
+        wait.until(ExpectedConditions.visibilityOf(currentUser));
         return currentUser.getText().trim();
     }
 
     public String getDefaultOwnerName(){
-        wait.until(ExpectedConditions.elementToBeClickable(defaultOwnerName));
+        wait.until(ExpectedConditions.visibilityOf(defaultOwnerName));
         return defaultOwnerName.getText().trim();
     }
 
