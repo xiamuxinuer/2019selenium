@@ -1,6 +1,6 @@
-package Fleet_PageTests;
+package Vytrack_PageTests;
 
-import Fleet_page.LoginPage;
+import Vytrack_Pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Driver;

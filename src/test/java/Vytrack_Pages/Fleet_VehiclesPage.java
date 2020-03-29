@@ -1,12 +1,11 @@
-package Fleet_page;
+package Vytrack_Pages;
 
-import Fleet_page.AbstractPageBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class VehiclesPage extends AbstractPageBase {
+public class Fleet_VehiclesPage extends AbstractPageBase {
     @FindBy(partialLinkText = "Create Car")
     private WebElement createCar;
 
