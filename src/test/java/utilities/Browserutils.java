@@ -58,5 +58,12 @@ public class Browserutils {
         return textValues;
     }
 
-
+    /**
+     * Scroll to element using JavaScript
+     *
+     * @param element
+     */
+    public static void scrollTo(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 }

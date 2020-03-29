@@ -5,6 +5,7 @@ import Vytrack_Pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.DateTimeUtilities;
 import utilities.Driver;
 
 import java.util.Calendar;
@@ -21,6 +22,10 @@ public class Activities_CalendarEventsTest extends TestBaseClass {
         calendarEvent.createCalenderEvent();
 
         Assert.assertEquals(calendarEvent.getCurrentUserName(),calendarEvent.getDefaultOwnerName());
+
+        Assert.assertEquals(calendarEvent.getStartDate(), DateTimeUtilities.getTodaysDate("MMM dd, yyyy"));
     }
+
+
 
 }
