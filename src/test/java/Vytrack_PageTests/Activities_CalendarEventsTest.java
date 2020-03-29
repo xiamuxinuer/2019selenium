@@ -8,7 +8,9 @@ import org.testng.annotations.Test;
 import utilities.DateTimeUtilities;
 import utilities.Driver;
 
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 
 public class Activities_CalendarEventsTest extends TestBaseClass {
 
@@ -31,7 +33,18 @@ public class Activities_CalendarEventsTest extends TestBaseClass {
 
         Assert.assertEquals(DateTimeUtilities.getTimeDifference(startTime,endTime,format),1);
     }
+@Test
+public void findColumnName() throws InterruptedException {
+    loginPage.login();
+    calendarEvent.navigateTo("Activities", "Calendar Events");
+   // System.out.println(calendarEvent.getColumnNames());
+    List<String> expected= Arrays.asList("TITLE", "CALENDAR", "START", "END", "RECURRENT", "RECURRENCE", "INVITATION STATUS");
+    Assert.assertEquals(calendarEvent.getColumnNames(),expected);
 
 
+
+
+
+}
 
 }
