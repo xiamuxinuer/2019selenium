@@ -20,9 +20,9 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
 
 
     public void createCalenderEvent(){
-        Browserutils.waitForPageToLoad(10);
+        //Browserutils.waitForPageToLoad(10);
         wait.until(ExpectedConditions.elementToBeClickable(createCalendarEventButton)).click();
-        Browserutils.waitForPageToLoad(10);
+        //Browserutils.waitForPageToLoad(10);
     }
 
     public String getCurrentUserName(){
