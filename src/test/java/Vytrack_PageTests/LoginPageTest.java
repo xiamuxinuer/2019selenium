@@ -3,6 +3,7 @@ package Vytrack_PageTests;
 import Vytrack_Pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.Browserutils;
 import utilities.Driver;
 
 public class LoginPageTest extends TestBaseClass {
@@ -17,6 +18,7 @@ public class LoginPageTest extends TestBaseClass {
         LoginPage loginPage=new LoginPage();
         loginPage.login();
         Assert.assertEquals(Driver.getDriver().getTitle(),"Dashboard");
+        Browserutils.getScreenShot("loginPage");
     }
 
 

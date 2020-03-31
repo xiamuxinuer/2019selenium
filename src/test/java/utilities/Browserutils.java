@@ -75,7 +75,7 @@ public class Browserutils {
 
 
     public static String getScreenShot(String name)  {
-        String path = System.getProperty("user.dir")+"/test-output/screenshots/"+name+"png";
+        String path = System.getProperty("user.dir")+"/test-output/screenshots/"+name+".png";
 
         TakesScreenshot takesScreenshot= (TakesScreenshot) Driver.getDriver();
         File source= takesScreenshot.getScreenshotAs(OutputType.FILE);
