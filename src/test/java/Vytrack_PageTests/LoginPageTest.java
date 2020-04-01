@@ -18,7 +18,7 @@ public class LoginPageTest extends TestBaseClass {
         LoginPage loginPage=new LoginPage();
         loginPage.login();
         Assert.assertEquals(Driver.getDriver().getTitle(),"Dashboard");
-        Browserutils.getScreenShot("loginPage");
+        Browserutils.getScreenshot("loginPage3");
     }
 
 
@@ -27,6 +27,7 @@ public class LoginPageTest extends TestBaseClass {
         LoginPage loginPage=new LoginPage();
         loginPage.login("wrong","123");
         Assert.assertEquals(loginPage.getWarningMessageText(), "Invalid user name or password.");
+        Browserutils.getScreenshot("warning message2");
     }
 
 

@@ -2,8 +2,10 @@ package Vytrack_PageTests;
 
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utilities.Browserutils;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
@@ -20,7 +22,12 @@ public  abstract class TestBaseClass {
     }
 
      @AfterMethod
-    public void tearDown(){
+    public void tearDown(ITestResult iTestResult){
+        if (iTestResult.getStatus()==ITestResult.FAILURE){
+            //take screen shot:
+            Browserutils.getScreenshot(iTestResult.getName());
+        }
+
         Driver.closeDriver();
      }
 
