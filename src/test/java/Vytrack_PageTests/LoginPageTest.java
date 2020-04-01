@@ -15,19 +15,25 @@ public class LoginPageTest extends TestBaseClass {
 
     @Test
     public void verifyPageTitle() throws InterruptedException {
+        // we must add to every test at the beginning :
+        test=report.createTest("verify page title");
         LoginPage loginPage=new LoginPage();
         loginPage.login();
+        // just like :  system.out.println();
+        test.info("log as store manager");
         Assert.assertEquals(Driver.getDriver().getTitle(),"Dashboard");
-        Browserutils.getScreenshot("loginPage3");
+       test.pass("Page title Dashboard was verified");
     }
 
 
     @Test
     public void verifyWarningMessage() throws InterruptedException {
+        test=report.createTest("verify warning message");
         LoginPage loginPage=new LoginPage();
         loginPage.login("wrong","123");
+
         Assert.assertEquals(loginPage.getWarningMessageText(), "Invalid user name or password.");
-        Browserutils.getScreenshot("warning message2");
+       test.pass("warning message is displayed");
     }
 
 
