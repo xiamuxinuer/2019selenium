@@ -18,14 +18,14 @@ import java.util.List;
 public class Browserutils {
 
     // thread.sleep method:
-   public static void wait(int second){
+    public static void wait(int seconds) {
+        try {
+            Thread.sleep(1000 * seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
-      try {
-          Thread.sleep(1000*second);
-      } catch (InterruptedException e) {
-          e.printStackTrace();
-      }
-   }
 
     /**
      * waits for backgrounds processes on the browser to complete

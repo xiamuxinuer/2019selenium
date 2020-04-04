@@ -1,5 +1,6 @@
 package Vytrack_Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,8 +27,65 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
     @FindBy(className = "grid-header-cell__label")
     private List<WebElement> columnNames;
 
+
+    @FindBy(css = "[id^='oro_calendar_event_form_title-uid']")
+    private WebElement title;
+
+
+    @FindBy(css = "iframe[id^='oro_calendar_event_form_description-uid']")
+    private WebElement descriptionFrame;
+
+   @FindBy(id = "tinymce")
+    private WebElement textInputArea;
+
+    @FindBy(css = "[class='btn-group pull-right'] > button")
+    private WebElement saveAndClose;
+
+    @FindBy(xpath = "(//div[@class='control-label'])[1]")
+    private  WebElement actualTitleInput;
+
+
+   @FindBy(xpath = "//label[text()='Description']/following-sibling::div//div")
+   private WebElement descriptionInput;
+
+    public void enterCalendarEventTitle(String titleValue) throws InterruptedException {
+        Browserutils.waitForPageToLoad(20);
+
+        wait.until(ExpectedConditions.visibilityOf(title));
+        title.sendKeys(titleValue);
+        Thread.sleep(2000);
+    }
+
+    public void enterCalendarEventDescription(String description) {
+        //wait until frame is available and switch to it
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(descriptionFrame));
+        textInputArea.sendKeys(description);
+        driver.switchTo().defaultContent();//exit from the frame
+    }
+
+
+
+    public void clickAndSave() throws InterruptedException {
+        Thread.sleep(5000);
+        wait.until(ExpectedConditions.visibilityOf(saveAndClose));
+        wait.until(ExpectedConditions.elementToBeClickable(saveAndClose)).click();
+        Thread.sleep(5000);
+
+
+}
+public String getInputTitle(){
+        wait.until(ExpectedConditions.visibilityOf(actualTitleInput));
+        return actualTitleInput.getText();
+}
+
+public String getDescription(){
+    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[text()='Description']/following-sibling::div//div")));
+        return descriptionInput.getText();
+}
+
+
     public void createCalenderEvent(){
-        Browserutils.waitForPageToLoad(10);
+        Browserutils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.elementToBeClickable(createCalendarEventButton)).click();
         //Browserutils.waitForPageToLoad(10);
     }
