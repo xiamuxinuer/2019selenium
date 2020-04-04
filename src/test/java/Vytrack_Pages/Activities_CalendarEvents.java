@@ -126,13 +126,4 @@ public List<String> getColumnNames(){
         return Browserutils.getTextFromWebElements(columnNames);
 }
 
-
-
-
-
-
-
-
-
-
 }
