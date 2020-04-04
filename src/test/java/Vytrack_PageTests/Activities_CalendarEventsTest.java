@@ -15,11 +15,11 @@ import java.util.List;
 
 public class Activities_CalendarEventsTest extends TestBaseClass {
 
-    LoginPage loginPage=new LoginPage();
-    Activities_CalendarEvents calendarEvent=new Activities_CalendarEvents();
+
     @Test
     public void verifyDefaultOwner() throws InterruptedException {
-
+        LoginPage loginPage=new LoginPage();
+        Activities_CalendarEvents calendarEvent=new Activities_CalendarEvents();
         loginPage.login();
         calendarEvent.navigateTo("Activities", "Calendar Events");
         calendarEvent.createCalenderEvent();
@@ -36,6 +36,8 @@ public class Activities_CalendarEventsTest extends TestBaseClass {
     }
 @Test
 public void findColumnName() throws InterruptedException {
+    LoginPage loginPage=new LoginPage();
+    Activities_CalendarEvents calendarEvent=new Activities_CalendarEvents();
     loginPage.login();
     calendarEvent.navigateTo("Activities", "Calendar Events");
    // System.out.println(calendarEvent.getColumnNames());
