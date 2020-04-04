@@ -13,11 +13,13 @@ public class Fleet_VehiclesPageTest extends TestBaseClass {
         LoginPage loginPage=new LoginPage();
         Fleet_VehiclesPage vehiclesPage=new Fleet_VehiclesPage();
 
+        test=report.createTest("verify title");
         loginPage.login();
         vehiclesPage.navigateTo("Fleet","Vehicles");
         String expectedTitle = "All - Car - Entities - System - Car - Entities - System";
         String actualTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(actualTitle, expectedTitle);
+        test.pass("title verified");
     }
 
 

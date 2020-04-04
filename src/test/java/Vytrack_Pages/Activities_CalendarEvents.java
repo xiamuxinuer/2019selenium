@@ -53,7 +53,7 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
 
         wait.until(ExpectedConditions.visibilityOf(title));
         title.sendKeys(titleValue);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
     }
 
     public void enterCalendarEventDescription(String description) {

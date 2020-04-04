@@ -1,19 +1,29 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Test suite">
     <test name="Login">
+        <parameter name="reportName" value="login"></parameter>
         <classes>
             <class name="Vytrack_PageTests.LoginPageTest"/>
-            <class name="Vytrack_PageTests.Fleet_VehiclesPageTest"/>
         </classes>
     </test>
 
-    <test name="calendar event">
+   <test name="fleet module">
+    <parameter name="reportName" value="vehicle page"></parameter>
+    <classes>
+        <class name="Vytrack_PageTests.Fleet_VehiclesPageTest"/>
+    </classes>
+
+   </test>
+
+    <test name="calendar events">
+        <parameter name="reportName" value="calendar events"></parameter>
         <classes>
-           <class name="Vytrack_PageTests.Activities_CalendarEventsTest"/>
-
+            <class name="Vytrack_PageTests.Activities_CalendarEventsTest"/>
         </classes>
-    </test>
 
+
+
+    </test>
 
 
 

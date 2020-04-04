@@ -6,10 +6,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import utilities.Browserutils;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -25,8 +22,11 @@ public  abstract class TestBaseClass {
 
 
 @BeforeTest
-public void setUpTest(){
+@Parameters("reportName")
+public void setUpTest(@Optional String reportName){
+    System.out.printf("report name "+ reportName);
     report =new ExtentReports();
+
     String reportPath= System.getProperty("user.dir")+"/test-output/report.html";
     htmlReporter=new ExtentHtmlReporter(reportPath);
     report.attachReporter(htmlReporter);

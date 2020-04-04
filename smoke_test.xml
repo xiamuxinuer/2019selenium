@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke Test suite">
+<test name="Smoke test">
+    <parameter name="reportName" value="smoke"></parameter>
+    <classes>
+
+        <class name="Vytrack_PageTests.LoginPageTest">
+           <methods>
+             <exclude name="loginWithDDT"></exclude>
+
+           </methods>
+        </class>
+    </classes>
+
+
+
+
+</test>
+
+
+
+</suite>

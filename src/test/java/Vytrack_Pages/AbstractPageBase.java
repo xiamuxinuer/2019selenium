@@ -30,9 +30,9 @@ public abstract class AbstractPageBase {
         WebElement moduleElement=driver.findElement(By.xpath(moduleXpath));
 
         Actions actions=new Actions(driver);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         actions.moveToElement(tabElement).pause(2000).click(moduleElement).build().perform();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
     }
 
 
