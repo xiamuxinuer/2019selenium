@@ -1,15 +1,6 @@
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset='utf-8' /> 
 	<meta name='description' content='' />
@@ -17,9 +8,9 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1' />
 	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
 	
-        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-        <link href='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/5ce6a54/v3html/css/extent.css' type='text/css' rel='stylesheet' />
 	
 	<title>ExtentReports</title>
 
@@ -52,7 +43,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Apr 4, 2020 04:27:16 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Apr 7, 2020 08:58:12 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -68,6 +59,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -102,46 +94,81 @@
 		</div>
 	</section>
 <div id='test-view-charts' class='subview-full'>
-    <div id='charts-row' class='row nm-v nm-h'>
-        <div class='col s12 m12 l12 np-h'>
-            <div class='card-panel nm-v'>
-                <div class='left panel-name'>Tests</div>
-                <div class='chart-box' style="max-height:94px;">
-                    <canvas id='parent-analysis' width='90' height='70'></canvas>
-                </div>
-                <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> test(s) passed</span>
-                </div>
-                <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="timeline-chart" class="row nm-v nm-h">
-        <div class="col s12 m12 l12 np-h">
-            <div class="card-panel">
-                <div class='left panel-name'>Timeline (seconds)</div>
-                <div class="chart-box" style="width:98%;max-height:145px;">
-                    <canvas id="timeline" height="120"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m12 l12 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box' style="max-height:94px;">
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='37.5%'><span class='strong'>6</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='62.5%'>10</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="timeline-chart" class="row nm-v nm-h">
+		<div class="col s12 m12 l12 np-h">
+			<div class="card-panel">
+				<div class='left panel-name'>Timeline (seconds)</div>
+				<div class="chart-box" style="width:98%;max-height:145px;">
+					<canvas id="timeline" height="120"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>verify page title</span>
-						<span class='test-time'>Apr 4, 2020 04:27:26 PM</span>
+						<span class='test-name'>Login test for username :: username</span>
+						<span class='test-time'>Apr 7, 2020 08:58:24 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 08:58:24 PM</span>
+	<span class='label end-time'>Apr 7, 2020 08:58:24 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>8:58:24 PM</td>
+				<td class='step-details'>
+						Test was skipped for user: username
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: user1</span>
+						<span class='test-time'>Apr 7, 2020 08:58:34 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Apr 4, 2020 04:27:26 PM</span>
-	<span class='label end-time'>Apr 4, 2020 04:27:31 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+752ms</span>
+	<span class='label start-time'>Apr 7, 2020 08:58:34 PM</span>
+	<span class='label end-time'>Apr 7, 2020 08:58:38 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+889ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -155,17 +182,25 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>4:27:31 PM</td>
+				<td class='timestamp'>8:58:38 PM</td>
 				<td class='step-details'>
-						log as store manager
+						Login as user1
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:58:38 PM</td>
+				<td class='step-details'>
+						First name: John, Last name: Doe, Username: user1
 					
 				</td>
 			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:27:31 PM</td>
+				<td class='timestamp'>8:58:38 PM</td>
 				<td class='step-details'>
-						Page title Dashboard was verified
+						Successfully logged in as user1
 					
 				</td>
 			</tr>
@@ -174,17 +209,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
 					<div class='test-heading'>
-						<span class='test-name'>verify warning message</span>
-						<span class='test-time'>Apr 4, 2020 04:27:42 PM</span>
+						<span class='test-name'>Login test for username :: user2</span>
+						<span class='test-time'>Apr 7, 2020 08:58:48 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Apr 4, 2020 04:27:42 PM</span>
-	<span class='label end-time'>Apr 4, 2020 04:27:45 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+513ms</span>
+	<span class='label start-time'>Apr 7, 2020 08:58:48 PM</span>
+	<span class='label end-time'>Apr 7, 2020 08:58:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+35ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -196,11 +231,546 @@
 			</tr>
 		</thead>
 		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:58:52 PM</td>
+				<td class='step-details'>
+						Login as user2
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:58:52 PM</td>
+				<td class='step-details'>
+						First name: Mabel, Last name: Ziemann, Username: user2
+					
+				</td>
+			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>4:27:45 PM</td>
+				<td class='timestamp'>8:58:52 PM</td>
 				<td class='step-details'>
-						warning message is displayed
+						Successfully logged in as user2
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: user3</span>
+						<span class='test-time'>Apr 7, 2020 08:59:03 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 08:59:03 PM</span>
+	<span class='label end-time'>Apr 7, 2020 08:59:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>8:59:03 PM</td>
+				<td class='step-details'>
+						Test was skipped for user: user3
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: user4</span>
+						<span class='test-time'>Apr 7, 2020 08:59:14 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 08:59:14 PM</span>
+	<span class='label end-time'>Apr 7, 2020 08:59:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>8:59:14 PM</td>
+				<td class='step-details'>
+						Test was skipped for user: user4
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: user5</span>
+						<span class='test-time'>Apr 7, 2020 08:59:24 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 08:59:24 PM</span>
+	<span class='label end-time'>Apr 7, 2020 08:59:24 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>8:59:24 PM</td>
+				<td class='step-details'>
+						Test was skipped for user: user5
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: storemanager51</span>
+						<span class='test-time'>Apr 7, 2020 08:59:35 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 08:59:35 PM</span>
+	<span class='label end-time'>Apr 7, 2020 08:59:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+718ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:59:39 PM</td>
+				<td class='step-details'>
+						Login as storemanager51
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:59:39 PM</td>
+				<td class='step-details'>
+						First name: Geovany, Last name: Jenkins, Username: storemanager51
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:59:39 PM</td>
+				<td class='step-details'>
+						Successfully logged in as storemanager51
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: storemanager52</span>
+						<span class='test-time'>Apr 7, 2020 08:59:50 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 08:59:50 PM</span>
+	<span class='label end-time'>Apr 7, 2020 08:59:54 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+276ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:59:54 PM</td>
+				<td class='step-details'>
+						Login as storemanager52
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:59:54 PM</td>
+				<td class='step-details'>
+						First name: Roma, Last name: Medhurst, Username: storemanager52
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:59:54 PM</td>
+				<td class='step-details'>
+						Successfully logged in as storemanager52
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: storemanager53</span>
+						<span class='test-time'>Apr 7, 2020 09:00:05 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 09:00:05 PM</span>
+	<span class='label end-time'>Apr 7, 2020 09:00:05 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>9:00:05 PM</td>
+				<td class='step-details'>
+						Test was skipped for user: storemanager53
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: storemanager54</span>
+						<span class='test-time'>Apr 7, 2020 09:00:15 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 09:00:15 PM</span>
+	<span class='label end-time'>Apr 7, 2020 09:00:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>9:00:15 PM</td>
+				<td class='step-details'>
+						Test was skipped for user: storemanager54
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: storemanager55</span>
+						<span class='test-time'>Apr 7, 2020 09:00:27 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 09:00:27 PM</span>
+	<span class='label end-time'>Apr 7, 2020 09:00:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>9:00:27 PM</td>
+				<td class='step-details'>
+						Test was skipped for user: storemanager55
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: salesmanager101</span>
+						<span class='test-time'>Apr 7, 2020 09:00:37 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 09:00:37 PM</span>
+	<span class='label end-time'>Apr 7, 2020 09:00:41 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+924ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>9:00:41 PM</td>
+				<td class='step-details'>
+						Login as salesmanager101
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>9:00:41 PM</td>
+				<td class='step-details'>
+						First name: Peyton, Last name: Harber, Username: salesmanager101
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:00:41 PM</td>
+				<td class='step-details'>
+						Successfully logged in as salesmanager101
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: salesmanager102</span>
+						<span class='test-time'>Apr 7, 2020 09:00:52 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 09:00:52 PM</span>
+	<span class='label end-time'>Apr 7, 2020 09:00:56 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+938ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>9:00:56 PM</td>
+				<td class='step-details'>
+						Login as salesmanager102
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>9:00:56 PM</td>
+				<td class='step-details'>
+						First name: Patricia, Last name: Doyle, Username: salesmanager102
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:00:56 PM</td>
+				<td class='step-details'>
+						Successfully logged in as salesmanager102
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: salesmanager103</span>
+						<span class='test-time'>Apr 7, 2020 09:01:06 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 09:01:06 PM</span>
+	<span class='label end-time'>Apr 7, 2020 09:01:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+1ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>9:01:06 PM</td>
+				<td class='step-details'>
+						Test was skipped for user: salesmanager103
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: salesmanager104</span>
+						<span class='test-time'>Apr 7, 2020 09:01:17 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 09:01:17 PM</span>
+	<span class='label end-time'>Apr 7, 2020 09:01:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>9:01:17 PM</td>
+				<td class='step-details'>
+						Test was skipped for user: salesmanager104
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>Login test for username :: salesmanager105</span>
+						<span class='test-time'>Apr 7, 2020 09:01:27 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 7, 2020 09:01:27 PM</span>
+	<span class='label end-time'>Apr 7, 2020 09:01:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='skip'>
+				<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+				<td class='timestamp'>9:01:27 PM</td>
+				<td class='step-details'>
+						Test was skipped for user: salesmanager105
 					
 				</td>
 			</tr>
@@ -215,16 +785,17 @@
 	<!-- subview left -->
 	<div class='subview-right left'>
 		<div class='view-summary'>
-			<div id='step-filters' class="right sr-filters">
-				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
-				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
-				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
-				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
-				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
-				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
-				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
-			</div>
 			<h5 class='test-name'></h5>
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
 		</div>
 	</div>
 	<!-- subview right -->
@@ -237,7 +808,7 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>16</div>
 				</div>
 			</div>
 			<div class='col s2'>
@@ -249,19 +820,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Apr 4, 2020 04:27:16 PM</div>
+					<div class='panel-lead'>Apr 7, 2020 08:58:12 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Apr 4, 2020 04:27:46 PM</div>
+			 		<div class='panel-lead'>Apr 7, 2020 09:01:28 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 29s+886ms</div>
+					<div class='panel-lead'>0h 3m 15s+405ms</div>
 				</div>
 			</div>
 		</div>
@@ -272,14 +843,14 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 2,
-				passParent: 2,
+                parentCount: 16,
+				passParent: 6,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 0,
-				exceptionsParent: 0,
+				skipParent: 10,
+				exceptionsParent: 10,
 				childCount: 0,
 				passChild: 0,
 				failChild: 0,
@@ -304,11 +875,10 @@
 		</script>
 		<script>
 			var timeline = {
-			        "verify page title":4.752,"verify warning message":3.513
+			        "Login test for username :: username":0,"Login test for username :: user1":3.889,"Login test for username :: user2":4.035,"Login test for username :: user3":0,"Login test for username :: user4":0,"Login test for username :: user5":0,"Login test for username :: storemanager51":3.718,"Login test for username :: storemanager52":4.276,"Login test for username :: storemanager53":0,"Login test for username :: storemanager54":0,"Login test for username :: storemanager55":0,"Login test for username :: salesmanager101":3.924,"Login test for username :: salesmanager102":3.938,"Login test for username :: salesmanager103":0.001,"Login test for username :: salesmanager104":0,"Login test for username :: salesmanager105":0
 			};
 		</script>
-	
-		  <script src='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/js/extent.js' type='text/javascript'></script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/e9ccc29bd18c7914697075f44948d0913e462478/v3html/js/extent.js' type='text/javascript'></script>
 		<script type='text/javascript'>
 		</script>
 	</body>
