@@ -23,7 +23,7 @@ public  abstract class TestBaseClass {
 
 @BeforeTest
 @Parameters("reportName")
-public void setUpTest(@Optional String reportName){
+public void beforeTest(@Optional String reportName){
     System.out.printf("report name "+ reportName);
     report =new ExtentReports();
 
@@ -33,7 +33,7 @@ public void setUpTest(@Optional String reportName){
     htmlReporter.config().setReportName("Vytrack  Test Automation Result");
 }
 @AfterTest
-public void tearDownTest(){
+public void afterTest(){
     report.flush();// to release report
 }
 
