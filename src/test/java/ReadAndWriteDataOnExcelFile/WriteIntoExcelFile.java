@@ -15,9 +15,9 @@ public class WriteIntoExcelFile {
         FileInputStream inputStream =new FileInputStream("VytrackTestUsers.xlsx");
         Workbook workbook= WorkbookFactory.create(inputStream);
         Sheet sheet=workbook.getSheet("QA3-short");
-        Row row=sheet.getRow(0);
-        Cell cell=row.getCell(row.getLastCellNum()-1);
-        System.out.println(cell.getStringCellValue());
+        Row row=sheet.getRow(0);// first row of file
+        Cell cell=row.getCell(row.getLastCellNum()-1);// find last cell
+        System.out.println(cell.getStringCellValue());// get value of last cell
 
 
 
