@@ -8,12 +8,12 @@ import org.testng.annotations.Test;
 import utilities.ExcelUtils;
 
 public class LoginWithExcel extends TestBaseClass {
-    static int row=1;
+
     @Test(dataProvider = "credentialsFromExcel")
     public void loginTestWithExcel(String execute, String username, String password, String firstname, String lastname, String result) {
         String path = "VytrackTestUsers.xlsx";
         String spreadSheet = "QA3-short";
-        ExcelUtils excelUtil = new ExcelUtils(path, spreadSheet);
+         excelUtil = new ExcelUtils(path, spreadSheet);
 
         test = report.createTest("Login test for username :: " + username);
         if (execute.equals("y")) {
