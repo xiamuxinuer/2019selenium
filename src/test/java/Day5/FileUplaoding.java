@@ -17,9 +17,10 @@ public class FileUplaoding {
         Browserutils.wait(3);
         WebElement upLoad=driver.findElement(By.id("file-upload"));
 
-        String filePath="C:\\Users\\akbar\\Desktop\\Alex Anzhaer cover letter.docx";
+        //String filePath="C:\\Users\\akbar\\Desktop\\Alex Anzhaer cover letter.docx";
+        String picPath="C:\\Users\\akbar\\Desktop\\Capture - Shortcut.lnk";
 
-        upLoad.sendKeys(filePath);
+        upLoad.sendKeys(picPath);
 
         Browserutils.wait(3);
 
