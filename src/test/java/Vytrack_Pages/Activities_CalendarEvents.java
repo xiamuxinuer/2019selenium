@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utilities.Browserutils;
+import utilities.webTable;
 
 import java.util.List;
 
@@ -40,6 +41,29 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
 
     @FindBy(css = "[class='btn-group pull-right'] > button")
     private WebElement saveAndClose;
+
+
+
+
+    @FindBy(xpath = "//a[@class='btn-success btn dropdown-toggle']")
+    private WebElement extendSaveAndClose;
+
+    @FindBy(xpath = "//ul[@class='dropdown-menu']/li/button")
+    private List<WebElement> extendOptions;
+
+    @FindBy(xpath = "(//ul[@class='dropdown-menu']/li/button)[1]")
+    private WebElement extendOption1;
+
+    @FindBy(xpath = "(//ul[@class='dropdown-menu']/li/button)[2]")
+    private WebElement extendOption2;
+
+
+    @FindBy(xpath = "(//ul[@class='dropdown-menu']/li/button)[3]")
+    private WebElement extendOption3;
+
+
+
+
 
     @FindBy(xpath = "(//div[@class='control-label'])[1]")
     private  WebElement actualTitleInput;
@@ -200,6 +224,22 @@ public WebElement displayedColumn(){
         Browserutils.wait(2);
         return titleColumn;
 }
+
+
+public void clickExtendSaveAndClose(){
+    Browserutils.waitForPageToLoad(20);
+    Browserutils.wait(3);
+    wait.until(ExpectedConditions.elementToBeClickable(extendSaveAndClose)).click();
+
+        Browserutils.wait(3);
+}
+
+
+public List<WebElement> getExtendOptions(){
+        return extendOptions;
+}
+
+
 
 
 

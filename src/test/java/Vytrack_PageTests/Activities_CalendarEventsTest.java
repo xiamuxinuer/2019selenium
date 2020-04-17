@@ -8,9 +8,11 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utilities.DateTimeUtilities;
 import utilities.Driver;
+import utilities.webTable;
 
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 
 public class Activities_CalendarEventsTest extends TestBaseClass {
@@ -93,14 +95,34 @@ public Object[][] calendarEvent(){
     calendarEvent.deselectCheckBoxes();
 
     Assert.assertTrue(calendarEvent.displayedColumn().isDisplayed());
-
-
-
-
-
-
-
 }
+
+
+@Test
+    public void verifyDropDownOptions() throws InterruptedException {
+    LoginPage loginPage=new LoginPage();
+    Activities_CalendarEvents calendarEvent=new Activities_CalendarEvents();
+
+
+    test=report.createTest("verify drop down menu");
+
+    loginPage.login("storemanager85","UserUser123");
+
+    calendarEvent.navigateTo("Activities","Calendar Events");
+    calendarEvent.createCalenderEvent();
+    calendarEvent.clickExtendSaveAndClose();
+    Assert.assertTrue(!calendarEvent.getExtendOptions().isEmpty());
+
+    List<String> expected = Arrays.asList(new String[]{"Save And Close", "Save And New", "Save"});
+    List<String> actual= webTable.getTextFromWebElements(calendarEvent.getExtendOptions());
+
+Assert.assertEquals(expected,actual);
+}
+
+
+
+
+
 
 
 
