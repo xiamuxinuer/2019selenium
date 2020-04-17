@@ -27,7 +27,7 @@ public class Activities_CalendarEventsTest extends TestBaseClass {
 
         Assert.assertEquals(calendarEvent.getCurrentUserName(),calendarEvent.getDefaultOwnerName());
 
-        //Assert.assertEquals(calendarEvent.getStartDate(), DateTimeUtilities.getTodaysDate("MMM d, yyyy"));
+        Assert.assertEquals(calendarEvent.getStartDate(), DateTimeUtilities.getTodaysDate("MMM d, yyyy"));
 
         String startTime=calendarEvent.getStartTime();
         String  endTime=calendarEvent.getEndTime();
@@ -78,7 +78,29 @@ public Object[][] calendarEvent(){
        test.pass("calender event was created successfully");
 }
 
+@Test
+    public void deselectCheckBoxes() throws InterruptedException {
+    LoginPage loginPage=new LoginPage();
+    Activities_CalendarEvents calendarEvent=new Activities_CalendarEvents();
 
+
+    test=report.createTest("deselect check boxes");
+
+    loginPage.login("storemanager85","UserUser123");
+
+    calendarEvent.navigateTo("Activities","Calendar Events");
+
+    calendarEvent.deselectCheckBoxes();
+
+    Assert.assertTrue(calendarEvent.displayedColumn().isDisplayed());
+
+
+
+
+
+
+
+}
 
 
 

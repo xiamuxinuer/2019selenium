@@ -9,6 +9,9 @@ public class Fleet_VehiclesPage extends AbstractPageBase {
     @FindBy(partialLinkText = "Create Car")
     private WebElement createCar;
 
+    @FindBy(xpath = "(//h1)[2]")
+    private WebElement subHeader;
+
     public void clickToCreateCar() throws InterruptedException {
         WebDriverWait wait=new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();
@@ -16,6 +19,9 @@ public class Fleet_VehiclesPage extends AbstractPageBase {
     }
 
 
+    public String getSubHeader(){
+        return subHeader.getText();
+    }
 
 
 

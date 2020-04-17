@@ -45,6 +45,59 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
     private  WebElement actualTitleInput;
 
 
+    @FindBy(xpath = "//i[@class='fa-cog hide-text']")
+    private  WebElement gridSetting;
+
+    @FindBy(xpath = "//tbody/tr/td[3]/input")
+    private List<WebElement> allCheckBoxes;
+
+    @FindBy(xpath = "//tbody/tr/td/label")
+    private List<WebElement> nameColumn;
+
+
+    @FindBy(xpath = "//tbody/tr[1]/td[3]/input")
+    private WebElement Checkbox1;
+
+    @FindBy(xpath = "//tbody/tr[2]/td[3]/input")
+    private WebElement Checkbox2;
+
+    @FindBy(xpath = "//tbody/tr[3]/td[3]/input")
+    private WebElement Checkbox3;
+
+
+    @FindBy(xpath = "//tbody/tr[4]/td[3]/input")
+    private WebElement Checkbox4;
+
+
+
+    @FindBy(xpath = "//tbody/tr[5]/td[3]/input")
+    private WebElement Checkbox5;
+
+
+
+    @FindBy(xpath = "//tbody/tr[6]/td[3]/input")
+    private WebElement Checkbox6;
+
+
+
+    @FindBy(xpath = "//tbody/tr[7]/td[3]/input")
+    private WebElement Checkbox7;
+
+
+    @FindBy(css = "span[class='close']")
+    private WebElement closeSign;
+
+    @FindBy(xpath = "(//span[@class=\"grid-header-cell__label\"])[1]")
+    private WebElement titleColumn;
+
+
+
+
+
+
+
+
+
    @FindBy(xpath = "//label[text()='Description']/following-sibling::div//div")
    private WebElement descriptionInput;
 
@@ -125,5 +178,32 @@ public List<String> getColumnNames(){
         Browserutils.waitForPageToLoad(20);
         return Browserutils.getTextFromWebElements(columnNames);
 }
+
+
+
+public void deselectCheckBoxes(){
+    Browserutils.waitForPageToLoad(20);
+    gridSetting.click();
+    Browserutils.wait(2);
+    Checkbox2.click();
+    Checkbox3.click();
+    Checkbox4.click();
+    Checkbox5.click();
+    Checkbox6.click();
+    Checkbox7.click();
+    Browserutils.wait(2);
+      closeSign.click();
+
+}
+
+public WebElement displayedColumn(){
+        Browserutils.wait(2);
+        return titleColumn;
+}
+
+
+
+
+
 
 }

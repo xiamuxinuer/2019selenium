@@ -22,7 +22,19 @@ public class Fleet_VehiclesPageTest extends TestBaseClass {
         test.pass("title verified");
     }
 
+@Test
+    public void createCar() throws InterruptedException {
+    LoginPage loginPage=new LoginPage();
+    Fleet_VehiclesPage vehiclesPage=new Fleet_VehiclesPage();
 
+    test=report.createTest("create a car");
+    loginPage.login();
+    vehiclesPage.navigateTo("Fleet","Vehicles");
+    vehiclesPage.clickToCreateCar();
+    Assert.assertEquals(vehiclesPage.getSubHeader(),"Create Car");
+
+
+}
 
 
 
