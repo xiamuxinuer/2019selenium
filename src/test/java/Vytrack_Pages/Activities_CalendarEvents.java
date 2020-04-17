@@ -115,6 +115,14 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
     private WebElement titleColumn;
 
 
+    @FindBy(linkText = "Cancel")
+    private WebElement cancelButton;
+
+    @FindBy(xpath = "(//h1)[2]")
+    private WebElement subTitile;
+
+
+
 
 
 
@@ -241,9 +249,15 @@ public List<WebElement> getExtendOptions(){
 
 
 
+public  void clickCancelButton(){
+    Browserutils.waitForPageToLoad(20);
+    wait.until(ExpectedConditions.elementToBeClickable(cancelButton)).click();
+        Browserutils.wait(3);
+}
 
-
-
+public WebElement getSubTitle(){
+        return subTitile ;
+}
 
 
 }

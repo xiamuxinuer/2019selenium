@@ -120,13 +120,25 @@ Assert.assertEquals(expected,actual);
 }
 
 
+    @Test
+    public void cancelCalendarEvent() throws InterruptedException {
+        LoginPage loginPage = new LoginPage();
+        Activities_CalendarEvents calendarEvent = new Activities_CalendarEvents();
 
 
+        test = report.createTest("verify subtitle after cancel calendar event");
+
+        loginPage.login("storemanager85", "UserUser123");
+
+        calendarEvent.navigateTo("Activities", "Calendar Events");
+        calendarEvent.createCalenderEvent();
+        calendarEvent.clickCancelButton();
+        Assert.assertTrue(calendarEvent.getSubTitle().isDisplayed());
+        String expected="All Calendar Events";
+        Assert.assertEquals(calendarEvent.getSubTitle().getText(),expected);
 
 
-
-
-
+    }
 
 
 }
