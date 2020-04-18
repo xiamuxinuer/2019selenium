@@ -1,9 +1,12 @@
 package Vytrack_Pages;
 
+import Day9.JSExecutor;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import utilities.Browserutils;
 import utilities.webTable;
 
@@ -21,6 +24,10 @@ public class Activities_CalendarEvents  extends AbstractPageBase{
 
     @FindBy(css = "[id^='time_selector_oro_calendar_event_form_start']")
     private  WebElement startTime;
+
+
+
+
 
     @FindBy(css = "[id^='time_selector_oro_calendar_event_form_end']")
     private  WebElement endTime;
@@ -243,10 +250,10 @@ public void clickExtendSaveAndClose(){
 }
 
 
-public List<WebElement> getExtendOptions(){
-        return extendOptions;
-}
-
+    public List<String> getDropDownOption(){
+        Browserutils.waitForPageToLoad(20);
+        return Browserutils.getTextFromWebElements(extendOptions);
+    }
 
 
 public  void clickCancelButton(){
@@ -258,6 +265,17 @@ public  void clickCancelButton(){
 public WebElement getSubTitle(){
         return subTitile ;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
